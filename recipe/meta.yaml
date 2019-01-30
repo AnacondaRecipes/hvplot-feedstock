@@ -26,10 +26,7 @@ requirements:
 test:
   imports:
     - hvplot
-    - hvplot.examples
-    - hvplot.examples.assets
-    - hvplot.examples.user_guide
-    - hvplot.examples.user_guide.images
+    - hvplot.pandas
     - hvplot.tests
 
 about:

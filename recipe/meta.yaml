@@ -20,6 +20,7 @@ requirements:
   host:
     - python
     - pip
+    - pyct
   run:
     - python
     - bokeh >=1.0.0
@@ -27,7 +28,6 @@ requirements:
     - holoviews >=1.11.0
     - numpy >=1.15
     - pandas
-    - pyct
 
 test:
   imports:

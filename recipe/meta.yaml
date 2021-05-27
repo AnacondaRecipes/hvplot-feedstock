@@ -11,15 +11,14 @@ source:
 build:
   number: 1
   noarch: python
-  # ModuleNotFoundError: No module named 'hvplot.__main__'
-  # entry_points:
-  #   - hvplot = hvplot.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python
     - pip
+    - wheel
+    - setuptools
     - pyct
   run:
     - python
@@ -39,11 +38,13 @@ test:
     - pip
 
 about:
-  home: https://pyviz.github.io/hvplot
+  home: https://hvplot.holoviz.org/
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: A high-level plotting API for the PyData ecosystem built on HoloViews
+  dev_url: https://github.com/holoviz/hvplot
+  doc_url: https://nbsite.holoviz.org/
 
 extra:
   recipe-maintainers:

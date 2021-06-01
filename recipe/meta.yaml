@@ -19,7 +19,8 @@ requirements:
     - pip
     - wheel
     - setuptools
-    - pyct
+    - pyct >=0.4.4
+    - param >=1.6.1
   run:
     - python
     - bokeh >=1.0.0

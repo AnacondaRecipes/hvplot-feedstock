@@ -47,7 +47,8 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: A high-level plotting API for the PyData ecosystem built on HoloViews
-
+  dev_url: https://github.com/holoviz/hvplot
+  doc_url: https://nbsite.holoviz.org/
 extra:
   recipe-maintainers:
     - CurtLH

@@ -9,27 +9,25 @@ source:
   sha256: 8630dba34969b105e267cbe14237e2d56d9969c801980ae5e5190bc18b2792d6
 
 build:
+  skip: True # [py<36]
   number: 0
-  # ModuleNotFoundError: No module named 'hvplot.__main__'
-  # entry_points:
-  #   - hvplot = hvplot.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python
-    - pyct
+    - pyct >=0.4.4
+    - param >=1.12.0
     - pip
     - setuptools
     - wheel
   run:
     - python
     - packaging
-    - param >=1.12.0
     - bokeh >=2.0.0
     - colorcet >=2
     - holoviews >=1.12.0
-    - numpy
+    - numpy >=1.15    
     - pandas
 
 test:
@@ -48,7 +46,7 @@ about:
   license_file: LICENSE
   summary: A high-level plotting API for the PyData ecosystem built on HoloViews
   dev_url: https://github.com/holoviz/hvplot
-  doc_url: https://nbsite.holoviz.org/
+  doc_url: https://hvplot.holoviz.org
 extra:
   recipe-maintainers:
     - CurtLH

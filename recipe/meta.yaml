@@ -1,4 +1,4 @@
-{% set version = "0.7.3" %}
+{% set version = "0.8.0" %}
 
 package:
   name: hvplot
@@ -6,27 +6,28 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hvplot/hvplot-{{ version }}.tar.gz
-  sha256: 74b269c6e118dd6f7d2a4039e91f16a193638f4119b4358dc6dbd58a2e71e432
+  sha256: 8630dba34969b105e267cbe14237e2d56d9969c801980ae5e5190bc18b2792d6
 
 build:
-  number: 1
-  noarch: python
+  skip: True # [py<36]
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python
-    - pip
-    - wheel
-    - setuptools
     - pyct >=0.4.4
-    - param >=1.6.1
+    - param >=1.12.0
+    - pip
+    - setuptools
+    - wheel
   run:
     - python
-    - bokeh >=1.0.0
+    - packaging
+    - bokeh >=2.0.0
     - colorcet >=2
-    - holoviews >=1.11.0
-    - numpy >=1.15
+    - holoviews >=1.12.0
+    - numpy >=1.15    
     - pandas
 
 test:
@@ -39,17 +40,17 @@ test:
     - pip
 
 about:
-  home: https://hvplot.holoviz.org/
+  home: https://hvplot.holoviz.org
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: A high-level plotting API for the PyData ecosystem built on HoloViews
   dev_url: https://github.com/holoviz/hvplot
-  doc_url: https://nbsite.holoviz.org/
-
+  doc_url: https://hvplot.holoviz.org
 extra:
   recipe-maintainers:
     - CurtLH
     - jbednar
     - ocefpaf
     - philippjfr
+    - maximlt

@@ -23,7 +23,7 @@ requirements:
     - wheel
   run:
     - python
-    - packaging 
+    - packaging
     - bokeh >=2.0.0
     - colorcet >=2
     - holoviews >=1.12.0

@@ -10,21 +10,22 @@ source:
 
 build:
   skip: True # [py<36]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python
-    - pyct >=0.4.4
-    - param >=1.12.0
+    - pyct
+    - param
     - pip
     - setuptools
     - wheel
   run:
     - python
     - packaging
-    - bokeh >=2.0.0
+    # Do not build qith bokeh >=3.0.0, because it has breaking changes 
+    - bokeh >=2.0.0,<3.0.0
     - colorcet >=2
     - holoviews >=1.12.0
     - numpy >=1.15    

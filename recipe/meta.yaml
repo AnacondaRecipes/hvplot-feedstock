@@ -24,7 +24,7 @@ requirements:
   run:
     - python
     - packaging
-    # Do not build qith bokeh >=3.0.0, because it has breaking changes 
+    # Do not build with bokeh >=3.0.0, because it has breaking changes 
     - bokeh >=2.0.0,<3.0.0
     - colorcet >=2
     - holoviews >=1.12.0

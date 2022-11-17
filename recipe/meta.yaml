@@ -18,10 +18,10 @@ build:
 requirements:
   host:
     - python
-    - pyct
-    - param
+    - pyct >=0.4.4
+    - param >=1.7.0
     - pip
-    - setuptools
+    - setuptools >=30.3.0
     - wheel
   run:
     - python

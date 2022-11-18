@@ -1,32 +1,34 @@
-{% set version = "0.8.0" %}
+{% set name = "hvplot" %}
+{% set version = "0.8.1" %}
 
 package:
-  name: hvplot
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/hvplot/hvplot-{{ version }}.tar.gz
-  sha256: 8630dba34969b105e267cbe14237e2d56d9969c801980ae5e5190bc18b2792d6
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hvplot-{{ version }}.tar.gz
+  sha256: 53ddfe06743c4d5924fb1e597655bfa14e80feaf57a438bfd28442d36ac7c2b6
 
 build:
-  skip: True # [py<36]
   number: 0
+  # panel >=0.13.0 and nodejs aren't available on s390x
+  skip: True # [py<36 or s390x]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python
     - pyct >=0.4.4
-    - param >=1.12.0
+    - param >=1.7.0
     - pip
-    - setuptools
+    - setuptools >=30.3.0
     - wheel
   run:
     - python
     - packaging
-    - bokeh >=2.0.0
+    - bokeh >=1.0.0
     - colorcet >=2
-    - holoviews >=1.12.0
+    - holoviews >=1.11.0
     - numpy >=1.15    
     - pandas
 
@@ -45,8 +47,11 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: A high-level plotting API for the PyData ecosystem built on HoloViews
+  description: |
+    A high-level plotting API for pandas, dask, xarray, and networkx built on HoloViews
   dev_url: https://github.com/holoviz/hvplot
   doc_url: https://hvplot.holoviz.org
+
 extra:
   recipe-maintainers:
     - CurtLH

@@ -19,8 +19,8 @@ build:
 requirements:
   host:
     - python
-    - pyct 0.4.8
-    - param 1.13.0
+    - pyct
+    - param
     - pip
     - setuptools
     - wheel
@@ -64,3 +64,4 @@ extra:
     - maximlt
   skip-lints:
     - python_build_tool_in_run
+    - host_section_needs_exact_pinnings

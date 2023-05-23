@@ -63,4 +63,4 @@ extra:
     - philippjfr
     - maximlt
   skip-lints:
-    - uses_setuptools
+    - python_build_tool_in_run

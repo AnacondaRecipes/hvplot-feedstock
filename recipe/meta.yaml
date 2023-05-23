@@ -13,12 +13,13 @@ build:
   number: 0
   # panel >=0.13.0 and nodejs aren't available on s390x
   skip: True # [py<36 or s390x]
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - python
-    - pyct
+    - pyct 0.4.8
     - param 1.13.0
     - pip
     - setuptools
@@ -28,7 +29,7 @@ requirements:
     - bokeh >=1.0.0
     - colorcet >=2
     - holoviews >=1.11.0
-    - numpy >=1.15    
+    - numpy >=1.15
     - packaging
     - pandas
     - panel >=0.11.0
@@ -61,3 +62,5 @@ extra:
     - ocefpaf
     - philippjfr
     - maximlt
+  skip-lints:
+    - uses_setuptools

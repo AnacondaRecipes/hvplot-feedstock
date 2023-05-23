@@ -1,5 +1,5 @@
 {% set name = "hvplot" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hvplot-{{ version }}.tar.gz
-  sha256: feadb395ac01a0be5fc89155452446c2b9c412a99d63eac029083138163d5c1b
+  sha256: 262b8de5634470de2369481582fa078f1e598fd7e5758c283e1b8605ac2e8623
 
 build:
   number: 0
@@ -19,7 +19,7 @@ requirements:
   host:
     - python
     - pyct
-    - param
+    - param 1.13.0
     - pip
     - setuptools
     - wheel
@@ -32,6 +32,7 @@ requirements:
     - packaging
     - pandas
     - panel >=0.11.0
+    - param >=1.9.0
 
 test:
   imports:

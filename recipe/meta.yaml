@@ -1,5 +1,5 @@
 {% set name = "hvplot" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hvplot-{{ version }}.tar.gz
-  sha256: feadb395ac01a0be5fc89155452446c2b9c412a99d63eac029083138163d5c1b
+  sha256: 262b8de5634470de2369481582fa078f1e598fd7e5758c283e1b8605ac2e8623
 
 build:
   number: 0
   # panel >=0.13.0 and nodejs aren't available on s390x
   skip: True # [py<36 or s390x]
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -28,10 +29,11 @@ requirements:
     - bokeh >=1.0.0
     - colorcet >=2
     - holoviews >=1.11.0
-    - numpy >=1.15    
+    - numpy >=1.15
     - packaging
     - pandas
     - panel >=0.11.0
+    - param >=1.9.0
 
 test:
   imports:
@@ -60,3 +62,6 @@ extra:
     - ocefpaf
     - philippjfr
     - maximlt
+  skip-lints:
+    - python_build_tool_in_run
+    - host_section_needs_exact_pinnings

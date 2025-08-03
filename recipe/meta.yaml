@@ -19,7 +19,6 @@ requirements:
   host:
     - python
     - pip
-    - setuptools_scm
     - hatchling >=1.25.0
     - hatch-vcs >=0.4.0
   run:

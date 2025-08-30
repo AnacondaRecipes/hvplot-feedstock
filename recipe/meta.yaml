@@ -1,5 +1,5 @@
 {% set name = "hvplot" %}
-{% set version = "0.12.0" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hvplot-{{ version }}.tar.gz
-  sha256: 85c9d324d27fd227de54fdde5a25faa2aada92b8956b56c4f241b12f46bfe7f7
+  sha256: 66f4c9dbb7e5580c09ade55b14864ff6fcc96ed9ce11f7b67e9eb7072e2ed875
 
 build:
   number: 0
@@ -31,6 +31,11 @@ requirements:
     - pandas >=1.3
     - panel >=1.0
     - param >=1.12.0,<3.0
+  run_constrained:
+    - qpd >=0.4.4
+    - fugue-sql-antlr >=0.2.0
+    - geoviews >=1.9.0
+    - spatialpandas >=0.4.3
 
 test:
   imports:

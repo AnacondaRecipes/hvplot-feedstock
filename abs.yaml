@@ -1,7 +1,2 @@
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY314 : yes
-
-channels:
-  - https://staging.continuum.io/pbp/fs/markdown-it-py-feedstock/pr5/f3f1cd8
-  - https://staging.continuum.io/pbp/fs/panel-feedstock/pr56/0a3d022
-  - https://staging.continuum.io/pbp/fs/holoviews-feedstock/pr34/cdd2b7b
